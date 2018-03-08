@@ -1,0 +1,51 @@
+<include file="Pub:header" />
+<link type="text/css" rel="stylesheet" href="/Style/Mobile/css/new.css">
+<div class="box7_title"><a href="javascript:history.go(-1);" target="_blank"><img src="/style/mobile/images/table_but.png"></a>{$type_name}</div>
+
+<!-- 新闻列表 start-->
+<div class="list-content">
+    <volist name="list" id="vo">
+        <div class="list-box">
+            <a href="/M/New/new_view.html?nid={$vo.id}">
+                <div class="list-right"><img src="/Style/Mobile/images/jiantou.png" class="list-arrow"/></div>
+                <div class="list-left">
+                    <div class="list-title">{$vo.title|cnsubstr=###,25}</div>
+                    <div class="list-info">{$vo.art_info|cnsubstr=###,50}</div>
+                    <div class="list-time">{$vo.art_time|date="Y-m-d H:i:s",###}</div>
+                </div>
+            </a>
+        </div>
+    </volist>
+</div>
+<!-- 新闻列表 end-->
+<div class="load-more"><a href="javascript:void(0)" onclick="getInfo()" class="load-more-btn">加载更多新闻</a></div>
+<script type="text/javascript">
+    // 加载更多新闻
+    var nowPage = {$page.nowPage};
+    var total = {$page.total};
+    $(function(){
+        if(nowPage ==total || nowPage > total){
+            $(".load-more").hide();
+        }
+    });
+    function getInfo() {
+        nextPage = nowPage+1;
+        $.ajax({
+            url: location.href,
+            data: { p: nextPage },
+            type: 'get',
+            async: true,
+            success: function (res) {
+                $(".list-content").append(res);
+                if (total == nextPage) {
+                    $(".load-more").hide();
+                }
+                nowPage++;
+            },
+        });
+    }
+    $(".list-box").click(function(){
+        window.location.href = $(this).children("a").attr("href");
+    });
+</script>
+<include file="Pub:footer" />

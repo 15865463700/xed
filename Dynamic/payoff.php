@@ -1,0 +1,2 @@
+<?php
+return array ( 'BANK' => array ( 0 => array ( 'bank' => '中国银行', 'payee' => '刘克涛', 'account' => '3695656856521512', 'address' => '东营市支行', ), 1 => array ( 'bank' => '中国农业银行', 'payee' => '刘克涛', 'account' => '3695656856521512', 'address' => '东营市支行', ), ), 'BANK_INFO' => '汇款时请提前告知客服，汇款后请及时通知客服', ); ?>

@@ -1,0 +1,234 @@
+
+list=
+array (
+  0 => 
+  array (
+    'id' => '1',
+    'invest_id' => '1',
+    'interest' => '0.83',
+    'investor_uid' => '6',
+    'borrow_uid' => '1',
+    'borrow_id' => '2',
+    'capital' => '0.00',
+    'interest_fee' => '0.57',
+    'sort_order' => '1',
+    'total' => '3',
+  ),
+  1 => 
+  array (
+    'id' => '6',
+    'invest_id' => '4',
+    'interest' => '83.33',
+    'investor_uid' => '4',
+    'borrow_uid' => '1',
+    'borrow_id' => '5',
+    'capital' => '10000.00',
+    'interest_fee' => '56.66',
+    'sort_order' => '1',
+    'total' => '1',
+  ),
+)
+borrow_id=2
+detail_id=1
+borrow_uid=1
+investor_uid=6
+datamoney_x=
+array (
+  'uid' => '1',
+  'type' => 11,
+  'affect_money' => -0.83,
+  'account_money' => '25757.00',
+  'back_money' => 1489.42,
+  'collect_money' => '4080.83',
+  'freeze_money' => '300.00',
+  'info' => '对2号企业直投进行还款',
+  'add_time' => 1456470753,
+  'add_ip' => '180.153.81.183',
+  'target_uid' => '6',
+)
+mmoney_x=
+array (
+  'money_freeze' => '300.00',
+  'money_collect' => '4080.83',
+  'account_money' => '25757.00',
+  'back_money' => 1489.42,
+)
+update_investor=
+array (
+  'id' => '1',
+  'receive_capital' => 
+  array (
+    0 => 'exp',
+    1 => '`receive_capital`+0.00',
+  ),
+  'receive_interest' => 
+  array (
+    0 => 'exp',
+    1 => '`receive_interest`+0.83-0.57',
+  ),
+  'back_time' => 1456470753,
+)
+update_borrow=
+NULL
+updetail=
+array (
+  'status' => 1,
+  'receive_capital' => 
+  array (
+    0 => 'exp',
+    1 => '`receive_capital`+0.00',
+  ),
+  'receive_interest' => 
+  array (
+    0 => 'exp',
+    1 => '`receive_interest`+0.83-0.57',
+  ),
+  'repayment_time' => 1456470753,
+)
+update_borrow=
+NULL
+datamoney=
+array (
+  'uid' => '6',
+  'type' => '44',
+  'affect_money' => 0.26,
+  'account_money' => '20156.20',
+  'back_money' => 56376.74,
+  'collect_money' => 1717.65,
+  'freeze_money' => '510.00',
+  'info' => '收到借款人对2号企业直投的还款',
+  'add_time' => 1456470753,
+  'add_ip' => '180.153.81.183',
+  'target_uid' => '1',
+  'target_uname' => '18661395415',
+)
+mmoney=
+array (
+  'money_freeze' => '510.00',
+  'money_collect' => 1717.65,
+  'account_money' => '20156.20',
+  'back_money' => 56376.74,
+)
+moneynewid_x=772
+bxid=1
+investor=1
+summary=1
+detail=1
+moneynewid=773
+xid=1
+
+
+borrow_id=5
+detail_id=6
+borrow_uid=1
+investor_uid=4
+datamoney_x=
+array (
+  'uid' => '1',
+  'type' => 11,
+  'affect_money' => -10083.33,
+  'account_money' => 17163.09,
+  'back_money' => 0,
+  'collect_money' => '4080.83',
+  'freeze_money' => '300.00',
+  'info' => '对5号企业直投进行还款',
+  'add_time' => 1456470753,
+  'add_ip' => '180.153.81.183',
+  'target_uid' => '4',
+)
+mmoney_x=
+array (
+  'money_freeze' => '300.00',
+  'money_collect' => '4080.83',
+  'account_money' => 17163.09,
+  'back_money' => 0,
+)
+update_investor=
+array (
+  'id' => '4',
+  'status' => 2,
+  'receive_capital' => 
+  array (
+    0 => 'exp',
+    1 => '`receive_capital`+10000.00',
+  ),
+  'receive_interest' => 
+  array (
+    0 => 'exp',
+    1 => '`receive_interest`+83.33-56.66',
+  ),
+  'back_time' => 1456470753,
+)
+update_borrow=
+array (
+  'id' => '5',
+  'transfer_back' => 
+  array (
+    0 => 'exp',
+    1 => '`transfer_back`+10',
+  ),
+  'borrow_status' => 7,
+)
+updetail=
+array (
+  'status' => 1,
+  'receive_capital' => 
+  array (
+    0 => 'exp',
+    1 => '`receive_capital`+10000.00',
+  ),
+  'receive_interest' => 
+  array (
+    0 => 'exp',
+    1 => '`receive_interest`+83.33-56.66',
+  ),
+  'repayment_time' => 1456470753,
+)
+update_borrow=
+array (
+  'id' => '5',
+  'transfer_back' => 
+  array (
+    0 => 'exp',
+    1 => '`transfer_back`+10',
+  ),
+  'borrow_status' => 7,
+)
+datamoney=
+array (
+  'uid' => '4',
+  'type' => '44',
+  'affect_money' => 10026.67,
+  'account_money' => '481414.96',
+  'back_money' => 426274.19,
+  'collect_money' => 108073.2,
+  'freeze_money' => '10100.15',
+  'info' => '收到借款人对5号企业直投的还款',
+  'add_time' => 1456470753,
+  'add_ip' => '180.153.81.183',
+  'target_uid' => '1',
+  'target_uname' => '18661395415',
+)
+mmoney=
+array (
+  'money_freeze' => '10100.15',
+  'money_collect' => 108073.2,
+  'account_money' => '481414.96',
+  'back_money' => 426274.19,
+)
+moneynewid_x=774
+bxid=1
+investor=1
+summary=1
+detail=1
+moneynewid=775
+xid=1
+
+
+moneynewid_x_temp=1
+bxid_temp=1
+investor_temp=1
+summary_temp=1
+detail_temp=1
+moneynewid_temp=1
+xid_temp=1

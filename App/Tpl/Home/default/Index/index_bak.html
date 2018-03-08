@@ -1,0 +1,449 @@
+<include file="Public:header" />
+<include file="Public:lunbo" />
+<div class="width-100">
+    <div class="width1200 martop_30 simple-gonggao border-all">
+        <div class="width100 float_left marleft_70 color-grey font16 border-right">平台公告</div>
+        <div class=" float_left marleft_30 color-white font16">
+            <a href="{$noticeList['list'][0]['arturl']}" title="{$noticeList['list'][0]['title']}" class="changecolor"><!--<span>{$vn.art_time|date="Y-m-d H:i",###}</span>-->{$noticeList['list'][0]['title']|cnsubstr=###,30}</a>
+            <font color="#ff2f2f">NEW~</font>
+        </div>
+        <div class=" float_right"></div>
+        <div class="clear"></div>
+    </div>
+    <div class="border-left  border-right border-bottom marbottom_30" style="width: 1199px; margin: 0 auto 30px;">
+        <div class="index-mid-left float_left border-right">
+            <div class="float_left new-borrow-logo marleft_15 martop_30">
+                {:get_ad(18)}
+            </div>
+            <div class="float_left new-borrow-info martop_30">
+                <div class="title-100 font24"><a class="title-100 font24" style="font-size: 24px !important;color: #000!important;"
+href="{$listBorrowNew['list'][0]['id']|getInvestUrl=###}">{$listBorrowNew['list'][0]['borrow_name']|cnsubstr=###,16}</a><a href="{$listBorrowNew['list'][0]['id']|getInvestUrl=###}" class="font14 color-white text-center color-bg-red marleft_10">奖励+{$listBorrowNew['list'][0]['reward_num']}%</a> </div>
+                <div class="num-60">
+                    <div class="index-mid-width140 float_left marleft_10 font30 color-red">{$listBorrowNew['list'][0]['borrow_interest_rate']}<font class="font16">%</font></div>
+                    <div class="index-mid-width140 float_left marleft_10 font30">{$listBorrowNew['list'][0]['borrow_duration']}
+                        <font class="font16"><if condition="$listBorrowNew['list'][0]['repayment_type'] eq 1">
+                            天<else/>个月
+                        </if>
+                        </font>
+                    </div>
+                    <div class=" float_left marleft_10 font30 color-orange">{$listBorrowNew['list'][0]['borrow_money']|getMoneyFormt=###}<font class="font16">元</font></div>
+                    <div class="float_right  marright_20">
+                        <if condition="$listBorrowNew['list'][0]['borrow_status'] eq 3"> <a href="javascript:;" class="color-bg-black color-white a-mid-button text-center">流标</a>
+                            <elseif condition="$listBorrowNew['list'][0]['borrow_status'] eq 4"/>
+                            <a href="{$listBorrowNew['list'][0].id|getInvestUrl=###}"  class="color-bg-black color-white a-mid-button text-center">复审中</a>
+                            <elseif condition="$listBorrowNew['list'][0]['borrow_status'] eq 6"/>
+                            <a href="{$listBorrowNew['list'][0].id|getInvestUrl=###}"  class="color-bg-black color-white a-mid-button text-center">还款中</a>
+                            <elseif condition="$listBorrowNew['list'][0]['borrow_status'] gt 6"/>
+                            <a href="{$listBorrowNew['list'][0].id|getInvestUrl=###}"  class="color-bg-black color-white a-mid-button text-center">已完成</a>
+                            <else/>
+                            <a href="{$listBorrowNew['list'][0].id|getInvestUrl=###}"  class="color-bg-red color-white a-mid-button text-center">立即投标</a>
+                        </if>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="depict-30">
+                    <div class="index-mid-width140 float_left marleft_10 font16 color-95" >年化利率</div>
+                    <div class="index-mid-width140 float_left marleft_10 font16 color-95" >借款期限</div>
+                    <div class="index-mid-width140 float_left marleft_10 font16 color-95" >可投金额</div>
+                    <div class="float_right marright_20 font16 color-95"  >
+                        <span class="progress color-bg-grey2" style="width: 110px;">
+                        <span class="precent pbprecent color-bg-red" style="width:{$listBorrowNew.list.0.progress}%;">
+                        </span>
+                        </span>
+                        {$listBorrowNew['list'][0]['progress']}%
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="index-mid-another-01 border-bottom border-top  index-height36 index-lineheight36">
+                <div class="marleft_30 font14 color-white color-bg-black little-circle text-center float_left" style="margin-top: 8px;">?</div>
+                <div class="float_left marleft_10 another-a"><a href="/novice/index">了解新手标规则</a></div>
+                <div class="float_right another-a marleft_10" style="margin-right: 80px;"><a href="/novice/index">新手标列表</a></div>
+                <div class="font14 color-white color-bg-black little-circle text-center float_right" style="margin-top: 8px;">+</div>
+                <div class="clear"></div>
+            </div>
+            <div class="index-feature">
+                <div class="float_left index-feature-img index-feature-1 marleft_5"></div>
+                <div class="float_left index-feature-word font12"><a href="/Member/Common/register/" class="color-red font14">立即注册</a><br/>立即注册,认证拿积分<br/>投资理财拿收益</div>
+                <div class="float_left index-feature-img index-feature-2"></div>
+                <div class="float_left index-feature-word font12"><a href="/Privilege/index" class="color-orange font14">特权金</a><br/>最高可送特权金10000元<br/>还等什么,马上领取</div>
+                <div class="float_left index-feature-img index-feature-3"></div>
+                <div class="float_left index-feature-word font12"><a href="/Member/Interestratecoupon/index#fragment-1" class="font14" style="color: #5890a2">加息券</a><br/>股市狂跌我们涨<br/>全场加息不打烊!</div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="index-mid-right float_left">
+            <div class="float_left marleft_15 martop_30">
+                {:get_ad(19)}
+            </div>
+            <div class="float_left martop_30">
+                <div class="font24 index-height60 index-lineheight70 marleft_15">{$glo.web_name}数据</div>
+                <div class="font14 marleft_15 color-95">累计成交量<font class="font24 color-red">{$mborrowOut|getMoneyFormt=###}</font>元</div>
+            </div>
+            <div class="clear"></div>
+            <div class="color-bg-grey font14 index-height24 index-lineheight24">
+                <div class="float_left marleft_30">关注度最高</div>
+                <div class="float_left marleft_10 border-radius color-bg-red color-white text-center padleft_5 padright_5" style="height: 18px;line-height: 18px; margin-top: 3px;">HOT</div>
+                <div class="float_right another-a marleft_10 marright_25"><a href="/shishicaiwu/finanz.html">查看详细数据</a></div>
+                <div class="font14 color-white color-bg-black little-circle text-center float_right" style="margin-top: 2px;">+</div>
+                <div class="clear"></div>
+            </div>
+            <div class="width-33 border-right text-center padtop_30 padbottom_26 float_left"><font class="font24">{$sum_today|getMoneyFormt=###}</font>元<br/>今日成交</div>
+            <div class="width-33 border-right text-center  padtop_30 padbottom_26 float_left"><font class="font24">{$sum_yesterday|getMoneyFormt=###}</font>元<br/>昨日成交</div>
+            <div class="text-center width-33 padtop_30 padbottom_26 float_left"><font class="font24">{$borrow_num}</font>笔<br/>成功放款</div>
+            <div class="clear"></div>
+            <div class="index-gonggao-list-4 border-top">
+                <div class="float_left index-gonggao-img marleft_15"></div>
+                <div class="float_left index-gonggao-word font14">
+                    <volist name="noticeList.list" id="vo" key="k">
+                        <if condition="$k eq 1">
+                            <a href="{$vo.arturl}" title="{$vo.title}" class="font14">{$vo.title|cnsubstr=###,9}</a><img src="/Style/H/images/index/icon-red-N.png"/><font class="color-95 float_right">[{$vo.art_time|date="Y.m.d",###}]</font><div class="clear"></div>
+                            <else/>
+                            <a href="{$vo.arturl}" title="{$vo.title}" class="font14">{$vo.title|cnsubstr=###,12}</a><font class="color-95 float_right">[{$vo.art_time|date="Y.m.d",###}]</font><div class="clear"></div>
+                        </if>
+                    </volist>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <if condition="$listFBorrow['list'][0]['id'] gt 0">
+    <div class="width1200 marbottom_30 color-bg-grey index-borrow-box index_box">
+        {:get_ad(20)}
+        <div class="index-borrow-content float_right">
+            <div class="martop_20 marbottom_10">
+                <a href="{$listFBorrow['list'][0]['id']|getFundUrl=###}" class="font16 color-black">优计划({$listFBorrow['list'][0]['borrow_name']|cnsubstr=###,50})</a><a href="/fund/index.html" class="float_right marright_30 color-95">更多优计划项目>></a>
+                <div class="clear"></div>
+            </div>
+            <div class="float_left width155">年化利率</div>
+            <div class="float_left width155">借款总额</div>
+            <div class="float_left width155">项目期限</div>
+            <div class="float_left width155">起投金额</div>
+            <div class="float_left width155">发标时间</div>
+            <div class="float_left">
+                <if condition="$listFBorrow['list'][0]['transfer_out']-$listFBorrow['list'][0]['transfer_total'] eq 0">
+                    <a href="{$listFBorrow['list'][0]['id']|getFundUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">已满</a>
+                    <elseif condition="$listFBorrow['list'][0]['online_time'] lt time()+300 and $listFBorrow['list'][0]['online_time'] gt time()" />
+                    <a href="{$listFBorrow['list'][0]['id']|getFundUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">更新中</a>
+                    <elseif condition="$listFBorrow['list'][0]['online_time'] lt time()" />
+                    <a href="{$listFBorrow['list'][0]['id']|getFundUrl=###}" class="a-small-button color-bg-red color-white text-center font16 invest-a">立即加入</a>
+                </if>
+                <!--<a href="{$listFBorrow['list'][0]['id']|getFundUrl=###}" class="a-small-button color-bg-red color-white text-center font16 invest-a">立即加入</a>-->
+            </div>
+            <div class="clear"></div>
+            <div class="float_left width155 color-95"><font class="font22 color-red">{$listFBorrow['list'][0]['borrow_interest_rate']}</font>%-<font class="font22 color-red">{$listFBorrow['list'][0]['shouyi']}</font>%</div>
+            <div class="float_left width155 color-95"><font class="font22 color-orange">{$listFBorrow['list'][0]['borrow_money']|getMoneyFormt=###}</font>元</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listFBorrow['list'][0]['borrow_duration']}</font>个月</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listFBorrow['list'][0]['per_transfer']}</font>元</div>
+            <div class="float_left width155 color-95">{$listFBorrow['list'][0]['add_time']|date="Y-m-d H:i",###}</div>
+            <div class="float_left color-95">
+                <span class="progress color-bg-grey2" style="width: 120px;">
+                        <span class="precent pbprecent color-bg-red" style="width:{$listFBorrow.list.0.progress}%;">
+                        </span>
+                        </span>
+                {$listFBorrow['list'][0]['progress']}%
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    </if>
+    <if condition="$listBorrow5['list'][0]['id'] gt 0">
+    <div class="width1200 marbottom_30 color-bg-grey index-borrow-box index_box">
+        {:get_ad(21)}
+        <div class="index-borrow-content float_right">
+            <div class="martop_20 marbottom_10">
+                <a href="{$listBorrow5['list'][0]['id']|getInvestUrl=###}" class="font16 color-black">{:getIco($listBorrow5['list'][0])}{$listBorrow5['list'][0]['borrow_name']|cnsubstr=###,50}</a>{:getRewardIco($listBorrow5['list'][0])}<a href="/invest/index.html?type=search&&borrow_type=5" class="float_right marright_30 color-95">更多抵押标项目>></a>
+                <div class="clear"></div>
+            </div>
+            <div class="float_left width155">年化利率</div>
+            <div class="float_left width155">借款总额</div>
+            <div class="float_left width155">项目期限</div>
+            <div class="float_left width155">起投金额</div>
+            <div class="float_left width155">发标时间</div>
+            <div class="float_left">
+                <if condition="$listBorrow5['list'][0]['borrow_status'] eq 4">
+                    <a href="{$listBorrow5['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">复审中</a>
+                    <elseif condition="$listBorrow5['list'][0]['borrow_status'] eq 6"/>
+                    <a href="{$listBorrow5['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">还款中</a>
+                    <elseif condition="$listBorrow5['list'][0]['borrow_status'] eq 7"/>
+                    <a href="{$listBorrow5['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">已完成</a>
+                    <else/>
+                    <a href="{$listBorrow5['list'][0]['id']|getInvestUrl=###}" class="a-small-button color-bg-red color-white text-center font16 invest-a">立即加入</a>
+                </if>
+            </div>
+            <div class="clear"></div>
+            <div class="float_left width155 color-95"><font class="font22 color-red">{$listBorrow5['list'][0]['borrow_interest_rate']}</font>%</div>
+            <div class="float_left width155 color-95"><font class="font22 color-orange">{$listBorrow5['list'][0]['borrow_money']|getMoneyFormt=###}</font>元</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listBorrow5['list'][0]['borrow_duration']}</font>个月</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listBorrow5['list'][0]['borrow_min']}</font>元</div>
+            <div class="float_left width155 color-95">{$listBorrow5['list'][0]['first_verify_time']|date="Y-m-d H:i",###}</div>
+            <div class="float_left color-95">
+                <span class="progress color-bg-grey2" style="width: 120px;">
+                        <span class="precent pbprecent color-bg-red" style="width:{$listBorrow5.list.0.progress}%;">
+                        </span>
+                        </span>
+                {$listBorrow5['list'][0]['progress']}%
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    </if>
+    <if condition="$listBorrow1['list'][0]['id'] gt 0">
+    <div class="width1200 marbottom_30 color-bg-grey index-borrow-box index_box">
+        {:get_ad(22)}
+        <div class="index-borrow-content float_right">
+            <div class="martop_20 marbottom_10">
+                <a href="{$listBorrow1['list'][0]['id']|getInvestUrl=###}" class="font16 color-black">{:getIco($listBorrow1['list'][0])}{$listBorrow1['list'][0]['borrow_name']|cnsubstr=###,50}</a>{:getRewardIco($listBorrow1['list'][0])}<a href="/invest/index.html?type=search&&borrow_type=1" class="float_right marright_30 color-95">更多信用标项目>></a>
+                <div class="clear"></div>
+            </div>
+            <div class="float_left width155">年化利率</div>
+            <div class="float_left width155">借款总额</div>
+            <div class="float_left width155">项目期限</div>
+            <div class="float_left width155">起投金额</div>
+            <div class="float_left width155">发标时间</div>
+            <div class="float_left">
+                <if condition="$listBorrow1['list'][0]['borrow_status'] eq 4">
+                    <a href="{$listBorrow1['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">复审中</a>
+                    <elseif condition="$listBorrow1['list'][0]['borrow_status'] eq 6"/>
+                    <a href="{$listBorrow1['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">还款中</a>
+                    <elseif condition="$listBorrow1['list'][0]['borrow_status'] eq 7"/>
+                    <a href="{$listBorrow1['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">已完成</a>
+                    <else/>
+                    <a href="{$listBorrow1['list'][0]['id']|getInvestUrl=###}" class="a-small-button color-bg-red color-white text-center font16 invest-a">立即加入</a>
+                </if>
+            </div>
+            <div class="clear"></div>
+            <div class="float_left width155 color-95"><font class="font22 color-red">{$listBorrow1['list'][0]['borrow_interest_rate']}</font>%</div>
+            <div class="float_left width155 color-95"><font class="font22 color-orange">{$listBorrow1['list'][0]['borrow_money']|getMoneyFormt=###}</font>元</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listBorrow1['list'][0]['borrow_duration']}</font>个月</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listBorrow1['list'][0]['borrow_min']}</font>元</div>
+            <div class="float_left width155 color-95">{$listBorrow1['list'][0]['first_verify_time']|date="Y-m-d H:i",###}</div>
+            <div class="float_left color-95">
+                <span class="progress color-bg-grey2" style="width: 120px;">
+                        <span class="precent pbprecent color-bg-red" style="width:{$listBorrow1.list.0.progress}%;">
+                        </span>
+                        </span>
+                {$listBorrow1['list'][0]['progress']}%
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    </if>
+    <if condition="$listBorrow4['list'][0]['id'] gt 0">
+    <div class="width1200 marbottom_30 color-bg-grey index-borrow-box index_box">
+        {:get_ad(23)}
+        <div class="index-borrow-content float_right">
+            <div class="martop_20 marbottom_10">
+                <a href="{$listBorrow4['list'][0]['id']|getInvestUrl=###}" class="font16 color-black">{:getIco($listBorrow4['list'][0])}{$listBorrow4['list'][0]['borrow_name']|cnsubstr=###,50}</a>{:getRewardIco($listBorrow4['list'][0])}<a href="/invest/index.html?type=search&&borrow_type=4" class="float_right marright_30 color-95">更多净值标项目>></a>
+                <div class="clear"></div>
+            </div>
+            <div class="float_left width155">年化利率</div>
+            <div class="float_left width155">借款总额</div>
+            <div class="float_left width155">项目期限</div>
+            <div class="float_left width155">起投金额</div>
+            <div class="float_left width155">发标时间</div>
+            <div class="float_left">
+                <if condition="$listBorrow4['list'][0]['borrow_status'] eq 4">
+                    <a href="{$listBorrow4['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">复审中</a>
+                    <elseif condition="$listBorrow4['list'][0]['borrow_status'] eq 6"/>
+                    <a href="{$listBorrow4['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">还款中</a>
+                    <elseif condition="$listBorrow4['list'][0]['borrow_status'] eq 7"/>
+                    <a href="{$listBorrow4['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">已完成</a>
+                    <else/>
+                    <a href="{$listBorrow4['list'][0]['id']|getInvestUrl=###}" class="a-small-button color-bg-red color-white text-center font16 invest-a">立即加入</a>
+                </if>
+            </div>
+            <div class="clear"></div>
+            <div class="float_left width155 color-95"><font class="font22 color-red">{$listBorrow4['list'][0]['borrow_interest_rate']}</font>%</div>
+            <div class="float_left width155 color-95"><font class="font22 color-orange">{$listBorrow4['list'][0]['borrow_money']|getMoneyFormt=###}</font>元</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listBorrow4['list'][0]['borrow_duration']}</font>个月</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listBorrow4['list'][0]['borrow_min']}</font>元</div>
+            <div class="float_left width155 color-95">{$listBorrow4['list'][0]['first_verify_time']|date="Y-m-d H:i",###}</div>
+            <div class="float_left color-95">
+                <span class="progress color-bg-grey2" style="width: 120px;">
+                        <span class="precent pbprecent color-bg-red" style="width:{$listBorrow4.list.0.progress}%;">
+                        </span>
+                        </span>
+                {$listBorrow4['list'][0]['progress']}%
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    </if>
+    <if condition="$listBorrow2['list'][0]['id'] gt 0">
+    <div class="width1200 marbottom_30 color-bg-grey index-borrow-box index_box">
+        {:get_ad(24)}
+        <div class="index-borrow-content float_right">
+            <div class="martop_20 marbottom_10">
+                <a href="{$listBorrow2['list'][0]['id']|getInvestUrl=###}" class="font16 color-black">{:getIco($listBorrow2['list'][0])}{$listBorrow2['list'][0]['borrow_name']|cnsubstr=###,50}</a>{:getRewardIco($listBorrow2['list'][0])}<a href="/invest/index.html?type=search&&borrow_type=2" class="float_right marright_30 color-95">更多担保标项目>></a>
+                <div class="clear"></div>
+            </div>
+            <div class="float_left width155">年化利率</div>
+            <div class="float_left width155">借款总额</div>
+            <div class="float_left width155">项目期限</div>
+            <div class="float_left width155">起投金额</div>
+            <div class="float_left width155">发标时间</div>
+            <div class="float_left">
+                <if condition="$listBorrow2['list'][0]['borrow_status'] eq 4">
+                    <a href="{$listBorrow2['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">复审中</a>
+                    <elseif condition="$listBorrow2['list'][0]['borrow_status'] eq 6"/>
+                    <a href="{$listBorrow2['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">还款中</a>
+                    <elseif condition="$listBorrow2['list'][0]['borrow_status'] eq 7"/>
+                    <a href="{$listBorrow2['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">已完成</a>
+                    <else/>
+                    <a href="{$listBorrow2['list'][0]['id']|getInvestUrl=###}" class="a-small-button color-bg-red color-white text-center font16 invest-a">立即加入</a>
+                </if>
+            </div>
+            <div class="clear"></div>
+            <div class="float_left width155 color-95"><font class="font22 color-red">{$listBorrow2['list'][0]['borrow_interest_rate']}</font>%</div>
+            <div class="float_left width155 color-95"><font class="font22 color-orange">{$listBorrow2['list'][0]['borrow_money']|getMoneyFormt=###}</font>元</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listBorrow2['list'][0]['borrow_duration']}</font>个月</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listBorrow2['list'][0]['borrow_min']}</font>元</div>
+            <div class="float_left width155 color-95">{$listBorrow2['list'][0]['first_verify_time']|date="Y-m-d H:i",###}</div>
+            <div class="float_left color-95">
+                <span class="progress color-bg-grey2" style="width: 120px;">
+                        <span class="precent pbprecent color-bg-red" style="width:{$listBorrow2.list.0.progress}%;">
+                        </span>
+                        </span>
+                {$listBorrow2['list'][0]['progress']}%
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    </if>
+    <if condition="$listBorrow3['list'][0]['id'] gt 0">
+    <div class="width1200 marbottom_30 color-bg-grey index-borrow-box index_box">
+        {:get_ad(25)}
+        <div class="index-borrow-content float_right">
+            <div class="martop_20 marbottom_10">
+                <a href="{$listBorrow3['list'][0]['id']|getInvestUrl=###}" class="font16 color-black">{:getIco($listBorrow3['list'][0])}{$listBorrow3['list'][0]['borrow_name']|cnsubstr=###,50}</a>{:getRewardIco($listBorrow3['list'][0])}<a href="/invest/index.html?type=search&&borrow_type=3" class="float_right marright_30 color-95">更多秒还标项目>></a>
+                <div class="clear"></div>
+            </div>
+            <div class="float_left width155">年化利率</div>
+            <div class="float_left width155">借款总额</div>
+            <div class="float_left width155">项目期限</div>
+            <div class="float_left width155">起投金额</div>
+            <div class="float_left width155">发标时间</div>
+            <div class="float_left">
+                <if condition="$listBorrow3['list'][0]['borrow_status'] eq 4">
+                    <a href="{$listBorrow3['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">复审中</a>
+                    <elseif condition="$listBorrow3['list'][0]['borrow_status'] eq 6"/>
+                    <a href="{$listBorrow3['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">还款中</a>
+                    <elseif condition="$listBorrow3['list'][0]['borrow_status'] eq 7"/>
+                    <a href="{$listBorrow3['list'][0]['id']|getInvestUrl=###}" class="a-small-button invest_bg_color_black color-white text-center font16 invest-a">已完成</a>
+                    <else/>
+                    <a href="{$listBorrow3['list'][0]['id']|getInvestUrl=###}" class="a-small-button color-bg-red color-white text-center font16 invest-a">立即加入</a>
+                </if>
+            </div>
+            <div class="clear"></div>
+            <div class="float_left width155 color-95"><font class="font22 color-red">{$listBorrow3['list'][0]['borrow_interest_rate']}</font>%</div>
+            <div class="float_left width155 color-95"><font class="font22 color-orange">{$listBorrow3['list'][0]['borrow_money']|getMoneyFormt=###}</font>元</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listBorrow3['list'][0]['borrow_duration']}</font>个月</div>
+            <div class="float_left width155 color-95"><font class="font22 color-black">{$listBorrow3['list'][0]['borrow_min']}</font>元</div>
+            <div class="float_left width155 color-95">{$listBorrow3['list'][0]['first_verify_time']|date="Y-m-d H:i",###}</div>
+            <div class="float_left color-95">
+                <span class="progress color-bg-grey2" style="width: 120px;">
+                        <span class="precent pbprecent color-bg-red" style="width:{$listBorrow3.list.0.progress}%;">
+                        </span>
+                        </span>
+                {$listBorrow3['list'][0]['progress']}%
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    </if>
+    <!--动态-->
+    <div class="width1200">
+        <div class="index-condition-title color-bg-grey">
+            <div class="marleft_25 font20">{$glo.web_name}动态</div>
+        </div>
+    </div>
+    <div class="width1198 index-condition border-right border-left border-bottom">
+        <div class="float_left marleft_25 index-width420">
+            <div class="index-height80 index-lineheight80 font18">媒体报道</div>
+            <ul>
+                <volist name="MnoticeList.list" id="vo">
+                <li><a href="{$vo.arturl}" title="{$vo.title}" class="font14">{$vo.title|cnsubstr=###,20}</a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="float_left index-width420">
+            <div class="index-height80 index-lineheight80 font18">最新动态</div>
+            <ul>
+                <volist name="NnoticeList.list" id="vo">
+                    <li><a href="{$vo.arturl}" title="{$vo.title}" class="font14">{$vo.title|cnsubstr=###,20}</a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="float_left">
+            <div class="index-height80 index-lineheight80 font18">投资指南</div>
+            <ul>
+                <volist name="GnoticeList.list" id="vo">
+                    <li><a href="{$vo.arturl}" title="{$vo.title}" class="font14">{$vo.title|cnsubstr=###,20}</a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="width1198 border-bottom border-right border-left index-height320 marbottom_30">
+        <div class="float_left marleft_25 index-width420">
+            <div class="index-height80 index-lineheight80 font18">投资风云榜</div>
+            <div class="color-95 float_left  index-height36" style="width: 110px;">排名</div>
+            <div class="color-95 float_left  index-height36" style="width: 150px;">用户名</div>
+            <div class="color-95 float_left  index-height36 marleft_15">投资金额</div>
+            <div class="clear"></div>
+            <volist name="bangdan_list" id="vo" key="k">
+                <div class="float_left  index-height36" style="width: 110px;">
+                <if condition="$k eq 1">
+                    <img src="/Style/H/images/index/no_1.png" />
+                    <elseif condition="($k eq 2) or ($k eq 3)"/>
+                    <div class="color-bg-red color-white index-num-square">{$k}</div>
+                    <else/>
+                    <div class="color-white index-num-square" style="background-color: #a1acb4">{$k}</div>
+                </if>
+
+                </div>
+                <div class="float_left  index-height36" style="width: 150px;">{$vo.user_phone|hidecard=###,5}</div>
+                <div class="float_left  index-height36 color-orange">{$vo.affect_money|Fmoney=###}</div>
+                <div class="clear"></div>
+            </volist>
+        </div>
+        <div class="float_left">
+            <div class="index-height80 index-lineheight80 font18">公司风采</div>
+
+            <volist name=":get_ad(28)" id="va">
+                <div class="float_left marright_10 martop_20">
+                    <if condition="$va['url']==''"><img src="__ROOT__/{$va.img}" class="fengccai"/><else/><a href="{$va.url}" target='_blank'><img src="__ROOT__/{$va.img}"  class="fengccai"/></a></if>
+                </div>
+            </volist>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="width1200">
+        <div class="index-condition-title color-bg-grey">
+            <div class="marleft_25 font20">合作伙伴</div>
+        </div>
+    </div>
+    <div class="width1198 border-right border-left border-bottom marbottom_30">
+        <volist name="link_img" id="le">
+            <div class="float_left index-cor float_left marleft_35">
+                <a href="{$le.link_href}" target="_blank"><img src="{$le.link_img}"/></a>
+
+            </div>
+        </volist>
+
+        <div class="clear"></div>
+    </div>
+
+</div>
+
+<include file="Public:bottom" />

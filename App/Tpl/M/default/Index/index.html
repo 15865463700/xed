@@ -1,0 +1,223 @@
+﻿<include file="Pub:header" />
+<script language="javascript" type="text/javascript" src="/Style/Mobile/public.js"></script>
+<script type="text/javascript" src="/Style/Mobile/jquery.SuperSlide.js"></script>
+<div class="main">
+    <div class="mBan2">
+        <div id="slideBox" class="slideBox">
+            <div class="hd">
+                <ul><volist name=":get_ad(32)" id="vo"><li></li></volist></ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <volist name=":get_ad(32)" id="va">
+                        <li><if condition="$va['url']==''"><img src="__ROOT__/{$va.img}" /><else/><a href="{$va.url}" target='_blank'><img src="__ROOT__/{$va.img}" /></a></if></li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--    <div class="index_body_lex">
+    <if condition="$UID gt '0'">
+        <div class="index_lex_1">
+            <a href="/M/user/index" class="index_lex_login">个人中心</a>
+        </div>
+        <div class="index_lex_2">
+            <a href="/M/index/index2" class="index_lex_login">我要投资</a>
+        </div>
+    <else/>
+        <div class="index_lex_1">
+            <a href="/M/pub/login.html" class="index_lex_login">登陆</a>
+        </div>
+        <div class="index_lex_2">
+            <a href="/M/pub/regist.html" class="index_lex_login">注册</a>
+        </div>
+    </if>    
+    </div>
+    <div style="clear: both"></div>
+    <div style="width: 100%;height: 6px;background: #f1f1f1"></div>
+    <div style="height: 167px;">
+        <div style="float: left;height: 100%;width: 33%;text-align: center">
+           <p><img src="__ROOT__/Style/Mobile/images/other/index_1.png" style="width: 80px;margin:0 auto;margin-top: 10px;" alt=""/></p>
+            <p style="font-size: 20px;color: #000;">30倍活期</p>
+            <p style="font-size: 20px;color: #000;">存款收益</p>
+
+        </div>
+        <div style="float: right;height: 100%;width: 67%">
+            <div style="float: left;height: 100%;width: 50%;text-align: center">
+                <p><img src="__ROOT__/Style/Mobile/images/other/index_2.png" style="width: 80px;margin:0 auto;margin-top: 10px;" alt=""/></p>
+                <p style="font-size: 20px;color: #000;">多方安全</p>
+                <p style="font-size: 20px;color: #000;">保障</p>
+            </div>
+            <div style="float: right;height: 100%;width: 50%;text-align: center">
+                <p><img src="__ROOT__/Style/Mobile/images/other/index_3.png" style="width: 80px;margin:0 auto;margin-top: 10px;" alt=""/></p>
+                <p style="font-size: 20px;color: #000;">快速赎回</p>
+                <p style="font-size: 20px;color: #000;">资金</p>
+            </div>
+        </div>
+    </div>-->
+    <div style="clear: both;"></div>
+    <div class="recommend-project">推荐项目</div>
+    <!---优计划开始---> 
+  <volist name="listTBorrow.list" id="tvo">
+      <div style="height: 200px;width: 100%;margin: 0 auto;">
+          <div style="margin: 0 auto;position: absolute">
+              <img src="__ROOT__/Style/Mobile/images/other/consume.png" class="tip_lex" alt=""/>
+          </div>
+          <div style="clear: both"></div>
+          <div style="height: 24px;padding-top: 20px;">
+              <span style="padding-left: 50px;">优选定期（{$tvo.borrow_name|cnsubstr=###,12}）</span>
+          </div>
+          <div style="height: 30px;padding-left: 45px;">
+              <div style="height: 30px;float: left">
+                  <span class="invest-danbao-cooperation">本息保障</span>
+              </div>
+              <div style="height: 30px;">
+                  <span style="line-height: 40px;margin-left: 5px;">可投份数：{$tvo["transfer_total"]-$tvo["transfer_out"]}份</span>
+              </div>
+          </div>
+          <div style="height:70px;width:100%;padding-top:10px;text-align: center ">
+              <div style="width: 33.3%;height: 68px;float: left;line-height: 30px;padding-top: 10px;">
+                  <div style="width: 99%;float: left">
+                      <p style="font-size: 16px;color: #ff9600;"><span style="font-size:25px; ">{$tvo.borrow_interest_rate}</span>%</p>
+                      <p style="color: #b0b0b0;">收益率</p>
+                  </div>
+                  <div style="width: 1px;display: block;height: 80%;float: right;background: #dcdcdc"></div>
+              </div>
+              <div style="width: 66.6%;height: 78px;float: right">
+                  <div style="width: 50%;height: 68px;float: left;line-height: 30px;padding-top: 10px;">
+                      <div style="width: 99%;float: left">
+                      <p style="font-size: 16px;color: #ff9600"><span style="font-size:25px; ">{$tvo.borrow_duration} </span><php> echo $tvo['repayment_type']==1?'天':'个月'</php></p>
+                      <p style="color: #b0b0b0">还款期限</p>
+                      </div>
+                      <div style="width: 1px;display: block;height: 80%;float: right;background: #dcdcdc"></div>
+                  </div>
+                  <div style="width: 50%;height: 78px;float: right">
+                      <p style="color: #ff9600;">{$tvo.borrow_money|getMoneyFormt=###}元</p>
+                      <p style="color: #b0b0b0">投资总额</p>
+                      <p><span class="progress"><span class="precent" style="width: {$tvo.progress}%;"></span></span></p>
+                      <p>进度：{$tvo.progress}%</p>
+                  </div>
+              </div>
+          </div>
+          <div style="width: 80%;height: 45px;margin: 7px auto;">
+              <if condition="$tvo['is_show'] eq 0 and ($tvo['borrow_status'] eq 7 or $tvo['borrow_status'] eq 3)">
+                  <a class="tz_btt">已完成</a>
+                  <elseif condition="$tvo['is_show'] eq 1 and $tvo['transfer_out'] neq $tvo['transfer_total']" />
+                  <a href="{:U('M/tinvest/tdetail', array('id'=>$tvo['id']))}"  class="tz_bt">马上购买</a>
+                  <else/>
+                  <a class="tz_btt">还款中</a>
+              </if>
+          </div>
+      </div>
+      <div style="width: 100%;height:10px;background: #f0f0f0; "></div>
+  </volist>
+  <!---优计划结束--->
+  <!---活期理财开始---> 
+  <!--<volist name="listTBorrow2.list" id="tvo">-->
+      <!--<div style="height: 200px;width: 100%;margin: 0 auto;">-->
+          <!--<div style="margin: 0 auto;position: absolute">-->
+              <!--<img src="__ROOT__/Style/Mobile/images/other/consume2.png" class="tip_lex" alt=""/>-->
+          <!--</div>-->
+          <!--<div style="clear: both"></div>-->
+          <!--<div style="height: 24px;padding-top: 20px;">-->
+              <!--<span style="padding-left: 50px;">月月理财（{$tvo.borrow_name|cnsubstr=###,12}）</span>-->
+          <!--</div>-->
+          <!--<div style="height: 30px;padding-left: 45px;">-->
+              <!--<div style="height: 30px;float: left">-->
+                  <!--<span class="invest-danbao-cooperation">本息保障</span>-->
+              <!--</div>-->
+              <!--<div style="height: 30px;">-->
+                  <!--<span style="line-height: 40px;margin-left: 5px;">可投份数：{$tvo["transfer_total"]-$tvo["transfer_out"]}份</span>-->
+              <!--</div>-->
+          <!--</div>-->
+          <!--<div style="height:70px;width:100%;padding-top:10px;text-align: center ">-->
+              <!--<div style="width: 33.3%;height: 68px;float: left;line-height: 30px;padding-top: 10px;">-->
+                  <!--<div style="width: 99%;float: left">-->
+                      <!--<p style="font-size: 16px;color: #ff9600;"><span style="font-size:25px; ">{$tvo.borrow_interest_rate}</span>%/<php> echo $tvo['repayment_type']==1?'天':'年'</php></p>-->
+                      <!--<p style="color: #b0b0b0;">收益率</p>-->
+                  <!--</div>-->
+                  <!--<div style="width: 1px;display: block;height: 80%;float: right;background: #dcdcdc"></div>-->
+              <!--</div>-->
+              <!--<div style="width: 66.6%;height: 78px;float: right">-->
+                  <!--<div style="width: 50%;height: 68px;float: left;line-height: 30px;padding-top: 10px;">-->
+                      <!--<div style="width: 99%;float: left">-->
+                      <!--<p style="font-size: 16px;color: #ff9600"><span style="font-size:25px; ">{$tvo.borrow_duration} </span><php> echo $tvo['repayment_type']==1?'天':'个月'</php></p>-->
+                      <!--<p style="color: #b0b0b0">还款期限</p>-->
+                      <!--</div>-->
+                      <!--<div style="width: 1px;display: block;height: 80%;float: right;background: #dcdcdc"></div>-->
+                  <!--</div>-->
+                  <!--<div style="width: 50%;height: 78px;float: right">-->
+                      <!--<p style="color: #ff9600;">{$tvo.borrow_money|getMoneyFormt=###}元</p>-->
+                      <!--<p style="color: #b0b0b0">投资总额</p>-->
+                      <!--<p><span class="progress"><span class="precent" style="width: {$tvo.progress}%;"></span></span></p>-->
+                      <!--<p>进度：{$tvo.progress}%</p>-->
+                  <!--</div>-->
+              <!--</div>-->
+          <!--</div>-->
+          <!--<div style="width: 80%;height: 45px;margin: 7px auto;">-->
+              <!--<if condition="$tvo['is_show'] eq 0 and ($tvo['borrow_status'] eq 7 or $tvo['borrow_status'] eq 3)">-->
+                  <!--<a class="tz_btt">已完成</a>-->
+                  <!--<elseif condition="$tvo['is_show'] eq 1 and $tvo['transfer_out'] neq $tvo['transfer_total']" />-->
+                  <!--<a href="{:U('M/tinvest/tdetail', array('id'=>$tvo['id']))}"  class="tz_bt">马上购买</a>-->
+                  <!--<else/>-->
+                  <!--<a class="tz_btt">还款中</a>-->
+              <!--</if>-->
+          <!--</div>-->
+      <!--</div>-->
+  <!--</volist>-->
+  <!---活期理财结束--->
+  <div class="recommend-project">散标理财 | <font style="font-size:10px; ">精选散标 灵活投资</font></div>
+  <!---散标开始--->
+  <volist name="listBorrow.list" id='tvo'>
+      <div style="height: 200px;width: 100%;margin: 0 auto;">
+          <div style="height: 24px;padding-top: 20px;">
+              <span style="padding-left: 10px;"><a href="{:U('M/invest/detail', array('id'=>$tvo['id']))}"  style="color:#535353;">{$tvo.borrow_name|cnsubstr=###,13}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<if condition="$tvo.is_new eq '1'"><span class="invest-reward">新手专享</span>&nbsp;&nbsp;</if><if condition="$tvo.reward_num neq 0"><span class="invest-reward">奖励+{$tvo.reward_num}%</span><else /><span class="invest-danbao-cooperation">本息保障</span></if></span>
+          </div>
+          <div style="height: 30px;">
+              <div style="height: 30px;float: left;margin-left:10px;">
+
+              </div>
+          </div>
+          <div style="height:70px;width:100%;text-align: center ">
+              <div style="width: 33.3%;height: 68px;float: left;line-height: 30px;padding-top: 10px;">
+                  <div style="width: 99%;float: left">
+                  <p style="font-size: 16px;color: #ff9600;"><span style="font-size:25px; ">{$tvo.borrow_interest_rate}</span>%</p>
+                  <p style="color: #b0b0b0;">收益率</p>
+                  </div>
+                  <div style="width: 1px;display: block;height: 80%;float: right;background: #dcdcdc"></div>
+              </div>
+              <div style="width: 66.6%;height: 78px;float: right">
+                  <div style="width: 50%;height: 68px;float: left;line-height: 30px;padding-top: 10px;">
+                      <div style="width: 99%;float: left">
+                      <p style="font-size: 16px;color: #ff9600"><span style="font-size:25px; ">{$tvo.borrow_duration} </span><php> echo $tvo['repayment_type']==1?'天':'个月'</php></p>
+                      <p style="color: #b0b0b0">还款期限</p>
+                      </div>
+                      <div style="width: 1px;display: block;height: 80%;float: right;background: #dcdcdc"></div>
+                  </div>
+                  <div style="width: 50%;height: 78px;float: right;line-height: 30px;padding-top: 10px;">
+                      <p style="font-size: 14px;color: #ff9600;"><span style="font-size:18px; ">{$tvo.borrow_money|getMoneyFormt=###}元</span></p>
+                      <p style="color: #b0b0b0">借款金额</p>
+                  </div>
+              </div>
+          </div>
+          <div style="width: 100%;height: 20px;line-height: 11px;">
+              <span class="progress1">
+              <span class="precent1" style="width:{$tvo.progress}%;"></span></span>
+              &nbsp;进度：{$tvo.progress}%
+          </div>
+          <div style="width: 80%;height: 45px;margin: 4px auto;">
+              {$tvo.borrow_status|borrow_status=$tvo['id'],###}
+          </div>
+      </div>
+      <div style="width: 100%;height:10px;background: #f0f0f0; "></div>
+  </volist>
+    <!-- 列表结束-->
+    <div style="clear: both;"></div>
+    <div style="height: 42px;width: 100%;text-align: center;padding-top:30px;">
+        <a href="/M/index/index2" style="display: block;height: 42px;width: 60%;border: 2px solid #ef5c52;border-radius: 25px;color: #ef5c52;font-size: 20px;margin: 0 auto;line-height: 40px;">更多优质项目</a>
+    </div>
+</div>
+<script language="javascript">
+    jQuery(".slideBox").slide({mainCell:".bd ul",effect:"fold",autoPlay:true,trigger:"click"});
+</script>
+﻿<include file="Pub:footer_M" />

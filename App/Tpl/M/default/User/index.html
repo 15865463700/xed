@@ -1,0 +1,64 @@
+﻿<include file="Pub:header" /> 
+<div class="main" style="width: 103%;background-color: #eeeeee;padding-bottom: 20px;">
+    <div class="m_person_box" onclick="window.location.href='/M/user/info'">
+        <div class="m_per_img">
+            <a> <img style="width: 80px; height: 80px;" src="{$uid|get_avatar=###}"  /></a>
+        </div>
+        <div class="m_info">
+            {$uname}
+            <br/>
+            账户总额:{:Fmoney($minfo['account_money']+$minfo['back_money']+$minfo['money_collect']+$minfo['money_freeze'])}
+            <br/>
+            投资等级:&nbsp;{$minfo.integral|getInvestLeveIco=###,2}<br/>
+            信用等级:{$minfo.credits|getLeveIco=###,2}
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div class="zj_info">
+        <table border="0">
+            <tr>
+                <td style="border-bottom:1px #dcdcdc solid;border-right:1px #dcdcdc solid;"><div class="div1">&nbsp;&nbsp;&nbsp;&nbsp;账户余额</div><div class="div2">{:MFormt($minfo['account_money'] + $minfo['back_money'])}元&nbsp;&nbsp;&nbsp;&nbsp;</div></td>
+                <td style="border-bottom:1px #dcdcdc solid;"><div class="div1">&nbsp;&nbsp;&nbsp;&nbsp;冻结金额</div><div class="div2">{:MFormt($minfo['money_freeze'])}元&nbsp;&nbsp;&nbsp;&nbsp;</div></td>
+            </tr>
+            <tr>
+                <td style="border-right:1px #dcdcdc solid;"><div class="div1">&nbsp;&nbsp;&nbsp;&nbsp;待收本息</div><div class="div2">{:MFormt($minfo['money_collect'])}元&nbsp;&nbsp;&nbsp;&nbsp;</div></td>
+                <td><div class="div1">&nbsp;&nbsp;&nbsp;&nbsp;累计借入</div><div class="div2">{:MFormt($pcount['jrje'])}元&nbsp;&nbsp;&nbsp;&nbsp;</div></td>
+            </tr>
+        </table>
+    </div>
+    <div onclick="window.location.href='/M/user/fund'" class="m_lianjie borderbottom bordertop margintop">
+        <img src="/Style/Mobile/images/zjxx.jpg" />资金信息
+    </div>
+    <div onclick="window.location.href='/M/user/pay'" class="m_lianjie borderbottom">
+        <img src="/Style/Mobile/images/wytx.jpg" />我要充值
+    </div>
+    <div onclick="window.location.href='/M/user/cash'" class="m_lianjie borderbottom">
+        <img src="/Style/Mobile/images/wytx.jpg" />我要提现
+    </div>
+    <div onclick="window.location.href='/M/user/invest'" class="m_lianjie margintop borderbottom bordertop">
+        <img src="/Style/Mobile/images/tzzb.jpg" />投资总表
+    </div>
+    <div onclick="window.location.href='/M/user/loan'" class="m_lianjie  borderbottom">
+        <img src="/Style/Mobile/images/jkzb.jpg" />借款总表
+    </div>
+    <div onclick="window.location.href='/M/privilege'" class="m_lianjie  borderbottom">
+        <img src="/Style/Mobile/images/tqj.png" />特权金
+    </div>
+    <div onclick="window.location.href='/M/Interestratecoupon/notused'" class="m_lianjie  borderbottom">
+        <img src="/Style/Mobile/images/jxq.png" />加息券
+    </div>
+    <div onclick="window.location.href='/M/user/safe'" class="m_lianjie margintop  borderbottom bordertop">
+        <img src="/Style/Mobile/images/aqzx.jpg" />安全中心
+    </div>
+    <div onclick="window.location.href='/M/user/msg'" class="m_lianjie  borderbottom">
+        <img src="/Style/Mobile/images/znxx.jpg" />站内消息
+    </div>
+    <div onclick="window.location.href='/M/user/records'" class="m_lianjie  borderbottom">
+        <img src="/Style/Mobile/images/zjjl.jpg" />资金记录
+    </div>
+    <div class="logout margintop" onclick="window.location.href='/m/pub/logout'">退出登录</div>
+    
+
+</div>
+
+﻿<include file="Pub:footer" /> 

@@ -1,0 +1,2 @@
+<?php
+return array ( 'stmp' => array ( 'server' => 'smtp.qq.com', 'port' => '25', 'user' => '86526909@qq.com', 'pass' => 'greatlnz0577', 'name' => '马上贷系统', ), 'sms' => array ( 'type' => '1', 'user1' => '', 'pass1' => '', 'user2' => 'SDK-SRF-010-00432', 'pwd' => '^7c773-^', 'user3' => '', 'pass3' => '', 'pass2' => 'CA5D8BCDF67C3282275C229B5639A0B7', ), 'baidu' => array ( 'apiKey' => '', 'secretKey' => '', 'apkVersion' => '', 'apkPath' => '', ), ); ?>

@@ -1,0 +1,18 @@
+<include file="Pub:header" />
+<link type="text/css" rel="stylesheet" href="/Style/Mobile/css/new.css">
+<div class="box7_title"><a href="javascript:history.go(-1);" target="_blank"><img src="/style/mobile/images/table_but.png"></a><if condition="$is_new">{$content.type_name}<else />{$content.title}</if></div>
+
+<!-- 新闻内容 start-->
+<div class="new-box">
+    <div class="content-box">
+        <div class="new-title">{$content.title}</div>
+        <div class="new-time">{$content.time|date='Y-m-d H:i:s',###}</div>
+        <if condition="$content.art_img neq ''">
+            <div><img src="__ROOT__/{$content.art_img}" class="new-img"/></div>
+        </if>
+        <div class="">{$content.content}</div>
+    </div>
+</div>
+<!-- 新闻内容 end-->
+
+<include file="Pub:footer" />

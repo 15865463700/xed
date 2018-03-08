@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/Style/A/css/adminlogin.css" rel="stylesheet" type="text/css" />
+<title>管理员登录</title></head>
+
+<body>
+
+<div class="LOGONEW">
+<form method="post" action="/admin/index/login" name="form" id="form"> 
+	<div class="bodybox">
+    <div class="login_logo"></div>
+    <input type="text" class="text" placeholder="请输入登录名称" id="admin_name" name="admin_name" />
+    <input type="password" class="text" id="admin_pass" placeholder="请输入登录密码" name="admin_pass" />
+    <input type="text" class="text_code" id="code" name="code" placeholder="验证码" maxlength="4" /><img  src="/admin/index/verify" style=" position:relative;left:10px;top:10px;" onclick="javascript:this.src='/admin/index/verify?'+new Date().getTime()" />
+    <input class="btn btn-default" id="btnReg" onclick="javascript:subform();" onfocus="this.blur();" class="btn" style="margin-left:50px;" type="submit" name="yt0" value="登  录"/>
+    
+		</div>
+    <p id="tishi" class="powered" style="margin: 20px 30px 10px 30px;font-size:12px;font-family:微软雅黑;color:#666">为了您业务流畅，建议使用兼容性最好的谷歌浏览器，<a href="http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandalone_V43.0.2357.81_Setup.1432608296.exe" target="_blank">点击下载</a>
+    </p>
+</form>
+</div>
+
+<div id="footer"> 
+            <p class="powered">Powered By <a href="http://www.shangdaixitong.com/" target="_blank">马上贷</a><span class="copy">Copyright © 2014</span>
+            </p>
+        </div>
+<script type="text/javascript">
+    function getBrowserInfo()
+    {
+        var agent = navigator.userAgent.toLowerCase() ;
+
+        var regStr_ie = /msie [\d.]+;/gi ;
+        var regStr_ff = /firefox\/[\d.]+/gi
+        var regStr_chrome = /chrome\/[\d.]+/gi ;
+        var regStr_saf = /safari\/[\d.]+/gi ;
+//IE
+        if(agent.indexOf("msie") > 0)
+        {
+            return agent.match(regStr_ie) ;
+        }
+
+//firefox
+        if(agent.indexOf("firefox") > 0)
+        {
+            return agent.match(regStr_ff) ;
+        }
+
+//Chrome
+        if(agent.indexOf("chrome") > 0)
+        {
+            document.getElementById("tishi").style.display="none";
+            return agent.match(regStr_chrome) ;
+        }
+
+//Safari
+        if(agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0)
+        {
+            return agent.match(regStr_saf) ;
+        }
+
+    }
+    getBrowserInfo() ;
+
+</script>
+<script type="text/javascript">
+	function subform(){
+		var frm = document.forms['form'];
+			frm.submit();
+	}
+
+function keyUp(e) {  
+           var currKey=0,e=e||event; 
+            currKey=e.keyCode||e.which||e.charCode;
+  if(currKey==13){
+ document.getElementById("btnReg").click();
+		 }
+          } 
+
+   document.getElementById("form").onkeydown = keyUp;
+   </script>
+</body>
+</html>
